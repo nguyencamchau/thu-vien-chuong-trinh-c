@@ -1,0 +1,80 @@
+# Thư Viện Chương Trình C
+
+Kho lưu trữ các bài tập lập trình C cơ bản, được chia theo từng chủ đề cấu trúc thư mục rõ ràng.
+
+## 📁 Cấu Trúc Thư Mục
+
+```text
+thu-vien-chuong-trinh-c/
+|-- README.md
+|-- co-ban/
+
+|   |-- hello.c        (Chương trình chào hỏi)
+|   |-- tinh_tong.c    (Tính tổng 2 số nguyên)
+|-- mang/
+
+|   |-- tim_max.c      (Tìm số lớn nhất trong dãy)
+|-- chuoi/
+
+|   |-- dem_ky_tu.c    (Đếm số ký tự của một chuỗi)
+```
+
+---
+
+## 🛠️ Hướng Dẫn Chạy Chương Trình Trên VS Code
+
+Để biên dịch và chạy các file nguồn `.c` trên máy tính (sử dụng Terminal của VS Code), bạn thực hiện theo các bước sau:
+
+### Bước 1: Di chuyển vào đúng thư mục chứa file
+Trước khi chạy, bạn cần dùng lệnh `cd` để di chuyển từ thư mục gốc vào thư mục chứa bài tập đó.
+
+* **Nếu muốn chạy bài tập Cơ bản:**
+  ```bash
+  cd co-ban
+  ```
+* **Nếu muốn chạy bài tập Mảng:**
+  ```bash
+  cd mang
+  ```
+* **Nếu muốn chạy bài tập Chuỗi:**
+  ```bash
+  cd chuoi
+  ```
+
+### Bước 2: Biên dịch và Chạy file
+
+Sau khi đã ở trong đúng thư mục (ví dụ đang ở thư mục `mang`), bạn chạy lần lượt 2 lệnh sau trên Terminal:
+
+#### Lựa chọn 1: Sử dụng PowerShell (Mặc định của VS Code trên Windows)
+```powershell
+# 1. Biên dịch file .c thành file thực thi .exe
+gcc tim_max.c -o tim_max.exe
+
+# 2. Chạy file chương trình vừa biên dịch
+.\tim_max.exe
+```
+
+#### Lựa chọn 2: Sử dụng Command Prompt (cmd)
+```cmd
+# 1. Biên dịch file .c thành file thực thi .exe
+gcc tim_max.c -o tim_max.exe
+
+# 2. Chạy file chương trình
+tim_max.exe
+```
+
+> **💡 Lưu ý thay đổi tên file:** Nếu chạy bài khác, bạn chỉ cần thay thế tên file tương ứng (Ví dụ: `gcc dem_ky_tu.c -o dem_ky_tu.exe` và chạy `.\dem_ky_tu.exe`).
+
+---
+
+## ⚠️ Các Lỗi Thường Gặp & Cách Sửa
+
+### 1. Lỗi hiển thị tiếng Việt bị lỗi font trong Terminal
+Nếu các câu lệnh `printf` tiếng Việt hiển thị thành các ký tự lạ ô vuông, hãy sửa nhanh bằng cách gõ lệnh sau vào Terminal trước khi chạy chương trình:
+```bash
+chcp 65001
+```
+
+### 2. Lỗi "gcc is not recognized..."
+* **Nguyên nhân:** Máy tính của bạn chưa cài đặt trình biên dịch MinGW (GCC) hoặc chưa cấu hình đường dẫn Biến môi trường (Environment Variables).
+* **Cách khắc phục:** Cài đặt MinGW và thêm đường dẫn `C:\mingw64\bin` (hoặc tương tự) vào biến `Path` của hệ thống.
